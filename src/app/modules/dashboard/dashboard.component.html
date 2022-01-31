@@ -1,0 +1,66 @@
+<div class="container">
+
+  <mat-card >
+    <mat-form-field class="col-md-6"  appearance="fill">
+      <mat-label >Linha digitável </mat-label>
+      <input matInput type="text" [(ngModel)]="boleto">
+      <button *ngIf="boleto" matSuffix mat-icon-button aria-label="Clear" (click)="boleto=''">
+        <mat-icon> close </mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="col-md-6"  appearance="fill">
+      <mat-label >Contratante </mat-label>
+      <input matInput type="text" [(ngModel)]="contratante">
+      <button *ngIf="contratante" matSuffix mat-icon-button aria-label="Clear" (click)="contratante=''">
+        <mat-icon> close </mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-card-actions  >
+      <button mat-button >Pesquisar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card">
+
+    <div
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="start">
+      <mat-card-subtitle> Cod Contratante: 151515 </mat-card-subtitle>
+      <mat-card-subtitle> Lote: 2022/01/31 </mat-card-subtitle>
+      <mat-card-subtitle> Carteirinha: 0008000000000000 </mat-card-subtitle>
+      <mat-card-subtitle> Telefone: 9999999999 </mat-card-subtitle>
+
+    </div>
+    <mat-divider inset></mat-divider><br/>
+    <div fxLayout="column" >
+      <mat-card-title>Waldisney da Silva Soares</mat-card-title>
+      <mat-card-subtitle>Vencimento - 2022/02/02</mat-card-subtitle>
+    </div>
+
+    <mat-card-content>
+      <p>Prezado Sr. Matheus, a Unimed informa, sua fatura com vencimento em 31/01/2022 esta disponível.
+        Para realizar o pagamento do boleto no valor de R$ 0,00 utilize a linha digitável a seguir:
+        0339943607 44300000682337 620010155887 10000526517
+      </p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider><br/>
+
+    <div
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="start" style="margin-bottom: -12px;">
+
+     <mat-card-subtitle>Tipo de Envio - Whatsapp</mat-card-subtitle>
+     <mat-card-subtitle> <strong>Valor da Fatura: R$ 00,00</strong>  </mat-card-subtitle>
+
+    </div>
+  </mat-card>
+
+</div>
+
+
+
+

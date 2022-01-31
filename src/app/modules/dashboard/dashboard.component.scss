@@ -1,0 +1,28 @@
+
+.mat-card{
+  margin-bottom: 20px;
+
+}
+
+.mat-card-title:not(:first-child), .mat-card-subtitle:not(:first-child) {
+   margin-top: 0px;
+}
+
+.mat-label{
+  font-size: 15px;
+}
+
+table{
+  width: 100%;
+}
+
+.mat-button{
+  background-color: #088e51;
+}
+
+.mat-card-actions{
+  margin-left: 15px;
+
+}
+
+
