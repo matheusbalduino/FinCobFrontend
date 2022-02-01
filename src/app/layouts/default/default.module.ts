@@ -14,8 +14,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { ConsultalotesComponent } from "src/app/modules/consultalotes/consultalotes.component";
+import { HttpClientModule } from "@angular/common/http";
+import { FinanceiroService } from "./services/financeiro.service";
 
 @NgModule({
   declarations:[
@@ -27,6 +30,7 @@ import { ConsultalotesComponent } from "src/app/modules/consultalotes/consultalo
   imports:[
     CommonModule,
     DefaultRoutingModule,
+    HttpClientModule,
     FlexLayoutModule,
     SharedModule,
     FormsModule,
@@ -38,9 +42,10 @@ import { ConsultalotesComponent } from "src/app/modules/consultalotes/consultalo
     MatCardModule,
     MatInputModule,
     MatTableModule,
+    MatPaginatorModule,
 
   ],
-  providers:[],
+  providers:[ FinanceiroService ],
 
 })
 export class DefaultModule{};

@@ -16,33 +16,33 @@
       </button>
     </mat-form-field>
     <mat-card-actions  >
-      <button mat-button >Pesquisar</button>
+      <button mat-button (click)="ObterPessoa()" >Pesquisar</button>
     </mat-card-actions>
   </mat-card>
+  <div class="animate__animated animate__fadeInLeft" *ngIf="pessoa" >
 
-  <mat-card class="example-card">
+  <mat-card class="example-card" >
 
     <div
     fxLayout="row"
     fxLayoutAlign="space-between center"
     fxLayout.xs="column"
     fxLayoutAlign.xs="start">
-      <mat-card-subtitle> Cod Contratante: 151515 </mat-card-subtitle>
-      <mat-card-subtitle> Lote: 2022/01/31 </mat-card-subtitle>
-      <mat-card-subtitle> Carteirinha: 0008000000000000 </mat-card-subtitle>
-      <mat-card-subtitle> Telefone: 9999999999 </mat-card-subtitle>
-      <mat-card-subtitle>Vencimento - 2022/02/02</mat-card-subtitle>
+      <mat-card-subtitle> Cod Contratante: {{pessoa.cdnCliente}} </mat-card-subtitle>
+      <mat-card-subtitle> Lote: {{pessoa.lote}} </mat-card-subtitle>
+      <mat-card-subtitle> Carteirinha: {{pessoa.carteirinha}} </mat-card-subtitle>
+      <mat-card-subtitle> Telefone: {{pessoa.telefone}} </mat-card-subtitle>
+      <mat-card-subtitle>Vencimento - {{pessoa.dtVencimento | date:'dd/MM/yyyy'}}</mat-card-subtitle>
 
     </div>
     <mat-divider inset></mat-divider><br/>
     <div fxLayout="column" >
-      <mat-card-title>Waldisney da Silva Soares</mat-card-title>
+      <mat-card-title>{{pessoa.nmUsuario}}</mat-card-title>
     </div>
 
     <mat-card-content>
-      <h3>Prezado Sr. Matheus, a Unimed informa, sua fatura com vencimento em 31/01/2022 esta disponível.
-        Para realizar o pagamento do boleto no valor de R$ 0,00 utilize a linha digitável a seguir:
-        0339943607 44300000682337 620010155887 10000526517
+      <h3>
+        {{pessoa.mensagem}}
       </h3>
     </mat-card-content>
     <mat-divider inset></mat-divider><br/>
@@ -53,12 +53,12 @@
     fxLayout.xs="column"
     fxLayoutAlign.xs="start" style="margin-bottom: -12px;">
 
-     <mat-card-subtitle>Tipo de Envio - Whatsapp</mat-card-subtitle>
-     <mat-card-subtitle> <strong>Valor da Fatura: R$ 00,00</strong>  </mat-card-subtitle>
+     <mat-card-subtitle>Tipo de Envio - {{pessoa.tipoEnvio}}</mat-card-subtitle>
+     <mat-card-subtitle> <strong>Valor da Fatura: R$ {{pessoa.valor}}</strong>  </mat-card-subtitle>
 
     </div>
   </mat-card>
-
+</div>
 </div>
 
 

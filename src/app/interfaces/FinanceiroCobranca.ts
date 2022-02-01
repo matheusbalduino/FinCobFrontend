@@ -6,7 +6,6 @@ export interface FinanceiroCobranca{
     CodPortador:string;
     telefone:string;
     nmUsuario:string;
-    sexo:string;
     valor:number;
     dtVencimento:Date;
     cdBoleto:string;
