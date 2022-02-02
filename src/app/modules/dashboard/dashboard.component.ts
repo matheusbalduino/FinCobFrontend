@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
     this.financeiro.obterDadosPessoa(this.boleto, this.contratante)
     .subscribe((result:any)=>{
       this.pessoa = result;
-      console.log(this.pessoa)
     })
   }
 

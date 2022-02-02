@@ -17,7 +17,6 @@ export class FinanceiroService extends BaseService{
     var url = this.UrlServiceV1 + "ObterPessoa" + "?boleto=" + boleto
 
     if(codigo){
-      console.log(codigo)
       var url = this.UrlServiceV1 + "ObterPessoa" + "?boleto=" + boleto + "&codigo=" + codigo
     }
 
@@ -30,7 +29,10 @@ export class FinanceiroService extends BaseService{
 
   obterLotes():Observable<string[]>{
 
-    return this.http.get<string[]>(this.UrlServiceV1 + "Lotes", this.ObterHeaderJson())
+    return this.http.get<string[]>(this.UrlServiceV1 + "Lotes", this.ObterHeaderJson()).pipe(
+      map(this.extractData),
+      catchError(this.serviceError)
+    )
 
   }
 

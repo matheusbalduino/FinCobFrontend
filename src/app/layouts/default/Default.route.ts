@@ -5,7 +5,7 @@ import { DashboardComponent } from "src/app/modules/dashboard/dashboard.componen
 import { DefaultComponent } from "./default.component";
 
 const defaultRouterConfig: Routes = [
-  {path:'', redirectTo:'dashboard', pathMatch:'full'},
+  {path:'', redirectTo:'lotes', pathMatch:'full'},
   {
     path:'', component:DefaultComponent,
     children:[

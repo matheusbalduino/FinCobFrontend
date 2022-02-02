@@ -19,6 +19,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ConsultalotesComponent } from "src/app/modules/consultalotes/consultalotes.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FinanceiroService } from "./services/financeiro.service";
+import { InterceptorModule } from "src/app/layouts/Interceptor/interceptor.module";
 
 @NgModule({
   declarations:[
@@ -34,6 +35,7 @@ import { FinanceiroService } from "./services/financeiro.service";
     FlexLayoutModule,
     SharedModule,
     FormsModule,
+    InterceptorModule,
 
     MatButtonModule,
     MatSelectModule,

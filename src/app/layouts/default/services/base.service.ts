@@ -6,6 +6,7 @@ import { environment } from "src/environments/environment";
 export abstract class BaseService {
 
   protected UrlServiceV1:string = environment.baseUrl;
+  protected UrlServiceV2:string = environment.userUrl;
 
   protected ObterHeaderJson(){
     return {

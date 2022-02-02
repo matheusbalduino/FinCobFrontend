@@ -4,6 +4,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { FinanceiroCobranca } from 'src/app/interfaces/FinanceiroCobranca';
 import { FinanceiroService } from 'src/app/layouts/default/services/financeiro.service';
+import { Util } from 'src/app/Utils/util';
 
 
 @Component({
@@ -35,6 +36,10 @@ export class ConsultalotesComponent implements OnInit {
 
     constructor(private financeiro: FinanceiroService) { }
 
+    public hoje = new Date();
+
+    util = new Util();
+
     ngOnInit(): void {
       this.obterLotes();
     }
@@ -46,9 +51,10 @@ export class ConsultalotesComponent implements OnInit {
     }
 
     public obterLotes(){
-      this.financeiro.obterLotes()
+     return this.financeiro.obterLotes()
           .subscribe(result => {
             this.lotes = result
+            return result
           });
     }
 
@@ -79,7 +85,7 @@ export class ConsultalotesComponent implements OnInit {
     }
 
     download(result:any){
-      console.log(result)
+
       var blob = new Blob([result], {type:'text/csv;charset=utf-8;'})
 
       var filename = "lote" +
